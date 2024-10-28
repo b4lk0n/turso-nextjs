@@ -16,12 +16,15 @@ export async function createDatabase(name: string): Promise<void> {
 }
 
 export function createDatabaseClient(ref: string) {
-  const url = `libsql://${ref}-${env.TURSO_ORG}.turso.io`
+  const syncUrl = `libsql://${ref}-${env.TURSO_ORG}.turso.io`
+  const url = "file:local-replica.db"
 
   return drizzle({
     connection: {
       url,
+      syncUrl,
       authToken: env.TURSO_GROUP_AUTH_TOKEN,
+      syncInterval: 30,
     },
     schema,
     casing: "snake_case",

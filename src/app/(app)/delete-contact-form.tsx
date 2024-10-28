@@ -3,8 +3,8 @@
 import { TrashIcon } from "@radix-ui/react-icons"
 import Form from "next/form"
 import { useActionState } from "react"
-import { deleteContactAction } from "./delete-contact-action"
 import { FormAwareButton } from "~/components/ui/form-aware-button"
+import { deleteContactAction } from "./delete-contact-action"
 
 type Props = {
   contactId: number

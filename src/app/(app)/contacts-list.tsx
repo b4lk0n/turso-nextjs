@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, Suspense } from "react"
+import { type ComponentPropsWithoutRef, Suspense } from "react"
 import { ContactsListComponent } from "./contacts-list-component"
 import { ContactsListLoading } from "./contacts-list-loading"
 
