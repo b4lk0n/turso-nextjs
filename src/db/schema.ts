@@ -7,6 +7,7 @@ export const contacts = sqliteTable(
     id: integer({ mode: "number" }).primaryKey({ autoIncrement: true }),
     consultantId: integer({ mode: "number" }).notNull(),
     fullName: text().notNull(),
+    age: integer({ mode: "number" }),
     createdAt: integer({ mode: "timestamp" })
       .notNull()
       .default(sql`(CURRENT_TIMESTAMP)`),

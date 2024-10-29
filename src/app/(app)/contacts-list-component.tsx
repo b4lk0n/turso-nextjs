@@ -10,9 +10,13 @@ type Props = {
 export async function ContactsListComponent({ userRef }: Props) {
   const db = createDatabaseClient(userRef)
 
+  const start = performance.now()
   const contacts = await db.query.contacts.findMany({
     orderBy: desc(schema.contacts.id),
   })
+  const end = performance.now()
+
+  console.log("Fetch contact took:", end - start, "ms")
 
   if (!contacts.length) {
     return <div className="text-muted-foreground">No contacts</div>
